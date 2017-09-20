@@ -1,29 +1,26 @@
 class GuessingGame {
     constructor() {
-      this.number = null
+        this.min;
+        this.max;
+        this.avarage;
     }
 
-    setRange(min, max) {
-      this.number = Math.round(min - 0.5 + Math.random() * (max - min + 1));
-     
+   setRange(min, max) {
+        this.min = min;
+        this.max = max;
+        
+   }
+
+   guess() {
+        return this.avarage = Math.round((this.max + this.min)/2);
     }
 
-    guess(userNumber) {
-      if (userNumber > this.number) {
-        this.greater();
-      } else if (userNumber < this.number) {
-        this.lower();
-      } else if (userNumber === this.number) {
-        console.log('Вы угадали')
-      }
+   lower() {
+        this.max = this.avarage;
     }
 
-    lower() {
-      console.log('ваше число меньше')
-    }
-
-    greater() {
-      console.log('ваше число больше')
+   greater() {
+        this.min = this.avarage;
     }
 }
 
